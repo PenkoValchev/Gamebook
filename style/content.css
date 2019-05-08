@@ -1,0 +1,49 @@
+.content{
+    width: 80%;
+    border:1px solid white;
+    vertical-align: auto;
+    margin:auto;
+    border-radius: 10px;
+    background-color: lightgoldenrodyellow;
+    border:1px dotted orange;
+    padding:10px;
+}
+legend{
+    background-color: darkgoldenrod;
+    color:white;
+    width:250px;
+    font-size: 1em; 
+    text-align: center;
+}
+.content_table{
+    border:0px;
+}
+.content_table > tr{
+    border-bottom:2px solid lightgray;
+}
+#fst{
+    width:80%;
+}
+.font08{
+    font-size:0.8em;
+}
+.font102{
+    font-size:1.2em;
+}
+.font1{
+    font-size:1em;
+}
+.story_link{
+    text-decoration: none;
+    color:black;
+}
+.story_link:hover{
+    color:darkblue;
+}
+.lightgrey{
+    background-color: #eeeeee;
+}
+.paragraf-border{
+    
+    padding:5px;
+}

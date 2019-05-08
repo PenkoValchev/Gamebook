@@ -1,0 +1,96 @@
+.top-line{
+    min-height: 20px  ;
+    min-width: 100%;
+    background-color: darkslateblue;
+    color:lightgoldenrodyellow;
+    font-weight: bold;
+    padding: 1px;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+}
+
+#top-banner{
+  border: 2px solid whitesmoke;
+  width:  auto;
+  height: 250px;
+  vertical-align: center;
+
+}
+.banner-image{
+     vertical-align: center;
+     text-align: center;
+}
+.fill {object-fit: fill;}
+.contain {object-fit: contain;}
+.cover {object-fit: cover;}
+.scale-down {object-fit: scale-down;}
+.none {object-fit: none;}
+
+.top-menu{
+ 
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.top-menu > li{
+        display: inline;
+        padding-left:10px;
+        padding-right: 10px;
+        border-right:1px solid white;
+}
+.top-menu > li:hover {
+         color:lightcoral;
+         cursor:pointer;
+}
+.login-form{
+    background-color: darkslateblue;
+    margin:auto;
+    text-align: center;
+    width: 300px;
+    height: auto;
+    border:1px solid gray;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    left:43%
+}
+
+.login-form > label{
+     color:yellow;
+}
+
+#password:focus, 
+#name:focus{
+    background-color: lightgray;
+}
+.hidden{
+    display:none;
+}
+
+#submit-button{
+    width: 70%; 
+    float:right;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin-right:10px;
+    margin-bottom: 10px;
+}
+
+.font08{
+    font-size:0.8em;
+}
+.font102{
+    font-size:1.2em;
+}
+.font1{
+    font-size:1em;
+}
+.font07{
+    font-size:0.7em;
+}
+.font06{
+    font-size:0.6em;
+}
+.font14{
+    font-size:1.4em;
+}
