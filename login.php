@@ -1,7 +1,7 @@
 <?php
+
 session_start();
 $link = mysqli_connect("127.0.0.1", "root", "", "game");
-
 
 unset($_SESSION['error_message']);
 
@@ -27,7 +27,7 @@ if (!isset($_SESSION['error_message'])) {
 
     if ($result->num_rows > 0) {
         $_SESSION['username'] = $user['name'];
-        $_SESSION['userid']=$user['id'];
+        $_SESSION['userid'] = $user['id'];
         $_SESSION['role'] = $user['role'];
         $_SESSION['lastlogin'] = $user['lastlogin'];
         $sql = "UPDATE user SET lastlogin='" . date("Y-m-d H:i:s") . "'";
@@ -35,7 +35,6 @@ if (!isset($_SESSION['error_message'])) {
     } else {
         $_SESSION['error_message'] = "Грешен емайл/парола";
     }
-
 }
 mysqli_close($link);
 header("location:index.php");

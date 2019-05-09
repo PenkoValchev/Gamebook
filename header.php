@@ -30,8 +30,10 @@ endif;
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#" >Произведения <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="story.php">Всички произведения</a></li>
-                            <li><a href="story.php?authorid=<?=md5($_SESSION['userid']);?>">Моите произведения</a></li>
-                            <li><a href="story.php?favorites=<?=$_SESSION['userid'];?>">Абонаменти</a></li>
+                            <?php if (isset($_SESSION['userid'])) { ?>
+                                <li><a href="story.php?authorid=<?= md5($_SESSION['userid']); ?>">Моите произведения</a></li>
+                                <li><a href="story.php?favorites=<?= $_SESSION['userid']; ?>">Абонаменти</a></li>
+                            <?php } ?>
                         </ul>
                     </li> 
                     <li id="authors"><a href="authors.php">Автори</a></li>
@@ -42,13 +44,12 @@ endif;
                         <li><a href="#"  ><span class="glyphicon glyphicon-user"></span> Регистрация</a></li>
                         <li><a href="#" onclick="login();"><span class="glyphicon glyphicon-log-in"></span> Вход</a></li>
                     <?php } else { ?>
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Влязъл сте като :<?=$logged;?></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Влязъл сте като :<?= $logged; ?></a></li>
                         <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Изход</a></li>
-<?php } ?>
+                    <?php } ?>
                 </ul>
             </div>
         </nav>
-
 
         <!--<div class="top-line">
             <ul class="top-menu">
@@ -60,8 +61,8 @@ endif;
                     <li id="login" style="float:right;">Login</li>
         <?php //} if($logged){?>
                     <li id="logout"   style="float:right;"> Изход</li>
-                    <li id="login_as"   style="float:right;"><?php //echo "Влязъл сте като ".$logged; ?></li>
-<?php //}  ?>
+                    <li id="login_as"   style="float:right;"><?php //echo "Влязъл сте като ".$logged;  ?></li>
+        <?php //}  ?>
              </ul>
         </div>
         <div class="banner-image">
@@ -87,11 +88,11 @@ endif;
                 <p><label><strong style="
                                   display: inline-table;
                                   width:45px;margin-right: 30px;">Email:</strong>
-                                  <input type="email" 
-                                         id="login_email" 
-                                         name="login_email" 
-                                         required="true"    
-                                         placeholder="Въведете email">
+                        <input type="email" 
+                               id="login_email" 
+                               name="login_email" 
+                               required="true"    
+                               placeholder="Въведете email">
                     </label></p>
                 <label><strong style="display: inline-table;margin-right: 5px;">Password:</strong>
                     <input type="password" 
@@ -127,26 +128,24 @@ endif;
         </div>
         <div class="lb_overlay js_lb_overlay" style="display:none;height: 2924px; position: absolute; width: 100%; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: 1001; background: black; opacity: 0.3;"></div>
         <script>
-
-
             function close_login_form() {
                 $("#username").val("");
                 $("#password").val("");
             }
-            
-            function go(){
-              var c = document.getElementById("begin"); 
-              console.log(c+"sdss");
+
+            function go() {
+                var c = document.getElementById("begin");
+                console.log(c + "sdss");
             }
-            function login(){
+            function login() {
                 $("#sign_up").show();
                 $("#login_email").val('')
-               $("#login_email").focus();
+                $("#login_email").focus();
                 $("#login_password").val("");
             }
         </script>
         <style>
-            
+
             * {
                 margin: 0;
                 padding: 0;
