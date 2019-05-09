@@ -20,14 +20,9 @@ class Favorites {
     }
 
     public function getData() {
-        $sql = "SELECT * FROM favorites f  inner JOIN story s on  s.id = f.storyid  where f.userid = 4";
+        $sql = "SELECT * FROM favorites f  inner JOIN story s on  s.id = f.storyid  where f.userid = " . $_SESSION['userid'];
         $result = $this->db->query($sql);
-        echo "<pre>";
-        echo $sql;
-        print_r($result);
+        return $result;
     }
 
 }
-
-$fv = new Favorites();
-$fv->getData();
