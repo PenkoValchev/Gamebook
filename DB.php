@@ -22,7 +22,7 @@ class DB {
     function query($sql) {
         $sql1 = "SET NAMES utf8";
         $this->conn->query($sql1);
-      
+
         $result = $this->conn->query($sql);
 
         if ($this->conn->connect_errno) {
@@ -49,8 +49,6 @@ class DB {
 
     function getAll($table, $where = null, $orderby = null, $limit = null) {
 
-        //$sql = "SET NAMES utf8";
-        //$this->conn->query($sql);
         $sql_where = "";
         $sql_orderby = "";
         $sql = "SELECT * FROM " . $table;
@@ -96,7 +94,6 @@ class DB {
     }
 
     function getTableCols($table, $params, $where = null, $orderby = null) {
-        // $this->connect();
         $columns = join(",", $params);
         $sql = "SELECT " . $columns . " FROM " . $table;
 
@@ -107,9 +104,10 @@ class DB {
         if ($orderby != null) {
             $sql = $sql . " ORDER BY " . $orderby;
         }
+        
         $rw = [];
-
         $result = $this->conn->query($sql);
+        
         if ($this->conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
@@ -122,6 +120,7 @@ class DB {
         } else {
             $rw = null;
         }
+        
         $this->close();
         return $rw;
     }
